@@ -9,7 +9,7 @@ object CSVGenerator extends Logging {
     val writer = new PrintWriter(new File(filePath))
 
     try {
-      while (iterator.hasNext()) {
+      while (iterator.hasNext) {
         val data = iterator.next()
         if (data.isDefined)
           writer.write(s"${data.get.toString}\n")
@@ -17,7 +17,7 @@ object CSVGenerator extends Logging {
       logger.info(s"File Successfully Generated")
 
     } catch {
-      case io: IOException => logger.info(io.getMessage)
+      case io: IOException => logger.error(io.getStackTrace)
     }
     finally {
       writer.close()

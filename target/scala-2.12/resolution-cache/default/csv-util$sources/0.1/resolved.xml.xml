@@ -4,7 +4,7 @@
 		module="csv-util$sources"
 		revision="0.1"
 		status="integration"
-		publication="20181018232000"
+		publication="20181018235810"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -40,6 +40,10 @@
 		</dependency>
 		<dependency org="org.apache.logging.log4j" name="log4j-core" rev="2.11.0" transitive="false" conf="runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
 			<artifact name="log4j-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="mysql" name="mysql-connector-java" rev="5.1.24" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="mysql-connector-java" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
 		<dependency org="org.apache.logging.log4j" name="log4j-api" rev="2.11.0" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">

@@ -12,14 +12,14 @@ case class DataGenerator(iterator: Iterator[(String, String)], n: Int, range: (I
     * @return The next element if it exists. Otherwise, iterator
     */
   def next(): Option[User] = {
-    if(hasNext()) {
+    if(hasNext) {
       count += 1
       val tuple2 = iterator.next()
       Option(User(tuple2._1, tuple2._2, getRandomNumber(range)))
     } else None
   }
 
-  def hasNext() = iterator.hasNext && count < n
+  def hasNext = iterator.hasNext && count < n
 
   private def getRandomNumber(range: (Int, Int)): Int = {
     range._1 + randomSeed.nextInt(range._2 - range._1)

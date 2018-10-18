@@ -23,7 +23,11 @@ object CSVMain {
     val outputPath = args(1)
     val dataGenerator = initializeDataGenerator(args(0).toInt, randomAgeRange)
 
+    // Generate CSV datafile
     CSVGenerator.writeOut(outputPath, dataGenerator)
+
+    // Parse the generated file and insert each line of it to Database
+    CSVParser.DBInsert(outputPath, "")
   }
 
   private def validateArguments(args: Array[String], dataSizeRange: (Int, Int)) = {
