@@ -1,6 +1,6 @@
 package qirun.utils
 
-import scala.io.{BufferedSource, Source}
+import scala.io.Source
 
 object CSVParser {
 
