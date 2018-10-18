@@ -8,19 +8,29 @@ class FullNameGeneratorTest extends FlatSpec with Matchers {
     val firstnames = CSVParser.read("src/test/resources/firstnames_samples.csv")
     val lastnames = CSVParser.read("src/test/resources/lastnames_samples.csv")
 
-    val generator = FullNameGenerator(firstnames, lastnames)
+    val generator = FullNameGenerator(firstnames, lastnames, 10)
 
     assert(generator.next() == ("Aaron", "Aaberg"))
     assert(generator.next() == ("Aaron", "Aaby"))
   }
 
-  "FullnameGenerator" should "return the empty iterator when it reaches the last one" in {
+  "FullnameGenerator" should "return None when the given size is 0" in {
+
+    val firstnames = CSVParser.read("src/test/resources/firstnames_samples.csv")
+    val lastnames = CSVParser.read("src/test/resources/lastnames_samples.csv")
+
+    val generator = FullNameGenerator(firstnames, lastnames, 0)
+
+    assert(generator.next() == None)
+  }
+
+  "FullnameGenerator" should "return None when it reaches the last one" in {
 
     val empty1 = CSVParser.read("src/test/resources/empty.csv")
     val empty2 = CSVParser.read("src/test/resources/empty.csv")
 
-    val generator = FullNameGenerator(empty1, empty2)
+    val generator = FullNameGenerator(empty1, empty2, 10)
 
-    assert(generator.next() == generator.iterator)
+    assert(generator.next() == None)
   }
 }
