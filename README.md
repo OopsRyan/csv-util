@@ -23,6 +23,7 @@ The generated combinations are maintained using Iterator which is memory saving 
     
 **Solution**: A combination generation service might be able to solve this problem. If the size of data is huge, suppose billions of data records, the used combination and new combinations can be stored in 
 two different tables in a NoSQL database(which could be easily scaled out than RDBMS).  
+For data persistent layer, using Slick would be a better idea to manage data persistency. 
 
 Furthermore, the amount of IO operation time might also be a problem, since the data is wrote out line by line. Using batch might a workaround.
 
