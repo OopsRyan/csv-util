@@ -31,4 +31,4 @@ Furthermore, the amount of IO operation time might also be a problem, since the 
 Some test cases for DataGenerator can be found [here](./src/test/scala/DataGeneratorTest.scala)
 
 **TODO**:
-More test cases would be implemented in the future. Have many other quality tests to do. Sorry for that.
+More test cases would be implemented in the future. 
