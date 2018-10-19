@@ -26,3 +26,8 @@ two different tables in a NoSQL database(which could be easily scaled out than R
 
 Furthermore, the amount of IO operation time might also be a problem, since the data is wrote out line by line. Using batch might a workaround.
 
+### Test cases
+Some test cases for DataGenerator can be found [here](./src/test/scala/DataGeneratorTest.scala)
+
+**TODO**:
+More test cases would be implemented in the further. Have many other quality tests to do. Sorry for that.
