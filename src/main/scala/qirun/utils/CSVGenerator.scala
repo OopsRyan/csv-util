@@ -5,10 +5,16 @@ import org.apache.logging.log4j.scala.Logging
 
 object CSVGenerator extends Logging {
 
-  def writeOut(filePath: String, iterator: DataGenerator) = {
+  /**
+    * Write out the data in iterator to the given file
+    * @param filePath
+    * @param iterator
+    */
+  def writeOut(filePath: String, iterator: DataGenerator, header: Option[String]) = {
     val writer = new PrintWriter(new File(filePath))
 
     try {
+      if(header.isDefined) writer.write(s"${header.get}\n")
       while (iterator.hasNext) {
         val data = iterator.next()
         if (data.isDefined)

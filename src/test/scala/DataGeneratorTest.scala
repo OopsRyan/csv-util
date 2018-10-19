@@ -5,8 +5,8 @@ class DataGeneratorTest extends FlatSpec with Matchers {
 
   "FullnameGenerator" should "return the next element in the iterator" in {
 
-    val firstnames = CSVParser.read("src/test/resources/firstnames_samples.csv")
-    val lastnames = CSVParser.read("src/test/resources/lastnames_samples.csv")
+    val firstnames = CSVParser.read("src/main/resources/firstnames_samples.csv")
+    val lastnames = CSVParser.read("src/main/resources/lastnames_samples.csv")
 
     val generator = DataGenerator(firstnames, lastnames, 10, (1, 100))
     val user = generator.next().get
@@ -15,8 +15,8 @@ class DataGeneratorTest extends FlatSpec with Matchers {
 
   "FullnameGenerator" should "return None when the given size is 0" in {
 
-    val firstnames = CSVParser.read("src/test/resources/firstnames_samples.csv")
-    val lastnames = CSVParser.read("src/test/resources/lastnames_samples.csv")
+    val firstnames = CSVParser.read("src/main/resources/firstnames_samples.csv")
+    val lastnames = CSVParser.read("src/main/resources/lastnames_samples.csv")
 
     val generator = DataGenerator(firstnames, lastnames, 0, (1, 100))
     val user = generator.next()

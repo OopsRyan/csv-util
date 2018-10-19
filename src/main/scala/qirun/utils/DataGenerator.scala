@@ -21,6 +21,11 @@ case class DataGenerator(iterator: Iterator[(String, String)], n: Int, range: (I
 
   def hasNext = iterator.hasNext && count < n
 
+  /**
+    * get a random number from the given range(exclusive)
+    * @param range
+    * @return
+    */
   private def getRandomNumber(range: (Int, Int)): Int = {
     range._1 + randomSeed.nextInt(range._2 - range._1)
   }
